@@ -1,0 +1,24 @@
+# =========================================================
+# MACRO AUTOMATICA PER SCANSIONE DISTANZE
+# =========================================================
+
+# Inizializzazione generale prima di iniziare i run
+/run/initialize
+
+# Per evitare che stampi a schermo ogni singolo evento rallentando il PC
+/control/verbose 0
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+
+# =========================================================
+# LOOP SULLE DISTANZE
+# =========================================================
+
+# --- Distanza 17.0 cm ---
+/det/setDistance 17.0 cm
+/run/reinitializeGeometry
+/analysis/setFileName r1_17
+/run/beamOn 10000000
+
+
