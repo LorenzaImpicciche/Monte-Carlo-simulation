@@ -12,7 +12,7 @@ The simulation builds a detailed, realistic model of a standard scintillator set
 ## Simulation Execution 
 The repository includes macro files designed to automate the data collection process across different experimental setups:
 * **Energy Scans:** Macros can automatically sweep through multiple incident gamma energies at a fixed detector distance with high statistics (10,000,000 events per run).
-* **Distance Scans:** The distance can be iteratively modified during a run sequence using the `/det/setDistance` command followed by `/run/reinitializeGeometry`, allowing for distance-dependent efficiency curves without recompiling the code.
+* **Distance Scans:** The distance can be iteratively modified during a run sequence.
 
 ## Output
 * **Data Saving:** At the end of each simulated event, if the deposited energy is greater than zero, the Event ID and the total Energy Deposited are saved into an Ntuple.
