@@ -1,0 +1,55 @@
+
+# MACRO PER IL CALCOLO DELL'EFFICIENZA
+# Distanza fissa: 35 cm
+# Eventi per run: 10.000.000
+
+
+
+/det/setDistance 35 cm
+/run/initialize
+
+
+# ---  444 keV  ---
+/gun/energy 444 keV
+/analysis/setFileName r2_35cm_444keV
+/run/beamOn 10000000
+
+# ---  336 keV  ---
+/gun/energy 336 keV
+/analysis/setFileName r2_35cm_336keV
+/run/beamOn 10000000
+
+# ---  292 keV  ---
+/gun/energy 292 keV
+/analysis/setFileName r2_35cm_292keV
+/run/beamOn 10000000
+
+# ---  391 keV  ---
+/gun/energy 391 keV
+/analysis/setFileName r2_35cm_391keV
+/run/beamOn 10000000
+
+# ---  255 keV  ---
+/gun/energy 255 keV
+/analysis/setFileName r2_35cm_255keV
+/run/beamOn 10000000
+
+# ---  205 keV  ---
+/gun/energy 205 keV
+/analysis/setFileName r2_35cm_205keV
+/run/beamOn 10000000
+
+# ---  226 keV  ---
+/gun/energy 226 keV
+/analysis/setFileName r2_35cm_226keV
+/run/beamOn 10000000
+
+# ---  474 keV  ---
+/gun/energy 474 keV
+/analysis/setFileName r2_35cm_474keV
+/run/beamOn 10000000
+
+# ---  511 keV  ---
+/gun/energy 511 keV
+/analysis/setFileName r2_35cm_511keV
+/run/beamOn 10000000

@@ -1,0 +1,18 @@
+
+# MACRO PER SCANSIONE DISTANZE
+
+/run/initialize
+/control/verbose 0
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+
+# LOOP SULLE DISTANZE
+
+# --- Distanza 17.0 cm ---
+/det/setDistance 17.0 cm
+/run/reinitializeGeometry
+/analysis/setFileName r1_17
+/run/beamOn 10000000
+
+

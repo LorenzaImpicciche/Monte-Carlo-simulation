@@ -18,7 +18,6 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
   G4int n_particle = 1;
   fParticleGun  = new G4ParticleGun(n_particle);
 
-  // Definizione del fotone gamma
   G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
   G4String particleName;
   G4ParticleDefinition* particle = particleTable->FindParticle(particleName="gamma");
@@ -35,12 +34,12 @@ PrimaryGeneratorAction::~PrimaryGeneratorAction()
 
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
-  // Posizione della sorgente (origine del mondo)
+  // Posizione della sorgente nell'origine
   fParticleGun->SetParticlePosition(G4ThreeVector(0., 0., 0.));
 
-  // GENERAZIONE BACK-TO-BACK 
+  //GENERAZIONE BACK-TO-BACK 
   
-  // 1. Genero una direzione casuale nel 4pi per il primo fotone
+  //Genero una direzione casuale nel 4pi per il primo fotone
   G4double cosTheta = 2.0*G4UniformRand() - 1.0;
   G4double sinTheta = std::sqrt(1.0 - cosTheta*cosTheta);
   
@@ -48,11 +47,11 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   
   G4ThreeVector dir1(sinTheta*std::cos(phi), sinTheta*std::sin(phi), cosTheta);
   
-  // Sparo il primo fotone (verso il rivelatore)
+  // Sparo il primo fotone verso il rivelatore
   fParticleGun->SetParticleMomentumDirection(dir1);
   fParticleGun->GeneratePrimaryVertex(anEvent);
 
-  // 2. Il secondo fotone va esattamente nella direzione opposta (180 gradi)
+  // Il secondo fotone va esattamente nella direzione opposta (180 gradi)
   G4ThreeVector dir2 = -dir1;
   fParticleGun->SetParticleMomentumDirection(dir2);
   fParticleGun->GeneratePrimaryVertex(anEvent);

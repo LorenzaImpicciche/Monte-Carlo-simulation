@@ -7,9 +7,9 @@
 class G4VPhysicalVolume;
 class G4LogicalVolume;
 
-// --- QUESTA È LA RIGA CHE MANCAVA ---
+
 class G4GenericMessenger; 
-// ------------------------------------
+
 
 class DetectorConstruction : public G4VUserDetectorConstruction
 {

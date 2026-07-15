@@ -13,12 +13,12 @@ class SteppingAction : public G4UserSteppingAction
     SteppingAction(EventAction* eventAction);
     virtual ~SteppingAction();
 
-    // Metodo chiamato a ogni passo di ogni particella
+    
     virtual void UserSteppingAction(const G4Step*);
 
   private:
     EventAction* fEventAction;
-    G4LogicalVolume* fScoringVolume; // Il volume del cristallo NaI
+    G4LogicalVolume* fScoringVolume; 
 };
 
 #endif

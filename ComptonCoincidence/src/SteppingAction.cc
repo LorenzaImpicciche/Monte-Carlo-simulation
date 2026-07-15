@@ -23,10 +23,9 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
     = step->GetPreStepPoint()->GetTouchableHandle()
       ->GetVolume()->GetLogicalVolume();
 
-  // Controlla se siamo nel cristallo
   if (volume->GetName() != "logicCrystal") return;
 
-  // Accumula solo l'energia depositata
+
   G4double edepStep = step->GetTotalEnergyDeposit();
   if (edepStep > 0.) {
     fEventAction->AddEdep(edepStep);

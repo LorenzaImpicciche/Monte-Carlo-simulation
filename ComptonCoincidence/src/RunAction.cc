@@ -11,10 +11,10 @@ RunAction::RunAction() : G4UserRunAction()
   analysisManager->SetVerboseLevel(1);
   analysisManager->SetFileName("output");
 
-  // Creazione della Ntuple solo per l'energia
+
   analysisManager->CreateNtuple("Data", "Energy Deposition");
-  analysisManager->CreateNtupleIColumn("EventID");      // Colonna 0
-  analysisManager->CreateNtupleDColumn("EnergyDep");    // Colonna 1
+  analysisManager->CreateNtupleIColumn("EventID");      
+  analysisManager->CreateNtupleDColumn("EnergyDep");   
   analysisManager->FinishNtuple();
 }
 

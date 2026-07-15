@@ -1,9 +1,9 @@
 #include "PhysicsList.hh"
-#include "G4EmStandardPhysics_option4.hh" // <--- MODIFICA 1: Inclusione della Option 4
-#include "G4DecayPhysics.hh"            // Decadimenti particelle
-#include "G4RadioactiveDecayPhysics.hh" // Decadimenti radioattivi
-#include "G4SystemOfUnits.hh"           // Per usare 'mm', 'cm', 'MeV'
-#include "G4ProductionCutsTable.hh"     // Per gestire i tagli (Cuts)
+#include "G4EmStandardPhysics_option4.hh" 
+#include "G4DecayPhysics.hh"            
+#include "G4RadioactiveDecayPhysics.hh" 
+#include "G4SystemOfUnits.hh"           
+#include "G4ProductionCutsTable.hh"     
 
 PhysicsList::PhysicsList() 
 : G4VModularPhysicsList()
@@ -11,7 +11,6 @@ PhysicsList::PhysicsList()
 
   SetVerboseLevel(1);
 
-  // Registra la Fisica Elettromagnetica
   RegisterPhysics(new G4EmStandardPhysics_option4()); 
 
 
@@ -27,11 +26,10 @@ void PhysicsList::SetCuts()
 
   G4VUserPhysicsList::SetCuts();
 
-  // Imposta il "Range Cut" 
+
   SetDefaultCutValue(0.01 * mm);
 
   SetCutsWithDefault();
 
-  // Stampa la tabella dei tagli nel terminale per conferma
   if (verboseLevel > 0) DumpCutValuesTable();
 }
